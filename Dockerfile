@@ -1,13 +1,5 @@
 FROM node:8.16.0-stretch-slim
 
-# monaco-languageclient
-WORKDIR /app
-COPY example/package.json package.json
-COPY example/tsconfig.json tsconfig.json
-COPY example/webpack.config.js webpack.config.js
-COPY example/src src
-RUN npm install && npm run build
-
 # Omnisharp
 ENV OMNISHARP_VERSION 1.33.0
 ENV DOTNET_SDK_VERSION 2.2.300
@@ -35,9 +27,18 @@ ENV DOTNET_RUNNING_IN_CONTAINER=true \
 # Trigger first run experience by running arbitrary cmd to populate local package cache
 RUN dotnet help
 
+# Copy artifacts
+RUN mkdir /workspace
 COPY csharp-workspace/Solution.csproj /workspace
-COPY csharp-workspace/Solution.cs /workspace
 COPY csharp-workspace/omnisharp.json $HOME/.omnisharp/
+
+# monaco-languageclient
+WORKDIR /app
+COPY example/package.json package.json
+COPY example/tsconfig.json tsconfig.json
+COPY example/webpack.config.js webpack.config.js
+COPY example/src src
+RUN npm install && npm run build
 
 # Entrypoint
 CMD npm run start:ext
