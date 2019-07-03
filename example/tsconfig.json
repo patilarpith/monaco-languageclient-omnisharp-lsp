@@ -1,12 +1,25 @@
 {
-    "extends": "../tsconfig",
-    "compilerOptions": {
-        "rootDir": "src",
-        "outDir": "lib",
-        "baseUrl": ".",
-        "skipLibCheck": true
-    },
-    "include": [
-        "src"
-    ]
+  "compilerOptions": {
+    "target": "es5",
+    "rootDir": "src",
+    "module": "commonjs",
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "declarationMap": true,
+    "inlineSources": false,
+    "declaration": true,
+    "stripInternal": true,
+    "lib": [
+      "es2016",
+      "dom"
+    ],
+    "outDir": "lib",
+    "strict": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true
+  },
+  "include": [
+    "src"
+  ]
 }

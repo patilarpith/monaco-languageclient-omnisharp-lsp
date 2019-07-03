@@ -1,17 +1,16 @@
 {
   "private": true,
-  "name": "@monaco-languageclient/example",
   "version": "0.0.1",
   "dependencies": {
     "express": "^4.15.2",
     "monaco-editor-core": "^0.14.6",
-    "monaco-languageclient": "file:..",
+    "monaco-languageclient": "^0.9.0",
     "normalize-url": "^2.0.1",
     "reconnecting-websocket": "^3.2.2",
     "request-light": "^0.2.2",
     "vscode-json-languageservice": "^3.1.4",
     "vscode-languageserver": "^4.0.0",
-    "vscode-ws-jsonrpc": "^0.0.2-1",
+    "vscode-ws-jsonrpc": "^0.0.2-2",
     "ws": "^5.0.0"
   },
   "devDependencies": {
@@ -19,6 +18,7 @@
     "@types/node": "^7.0.12",
     "@types/normalize-url": "^1.9.1",
     "@types/ws": "0.0.39",
+    "@types/vscode": "1.35.0",
     "css-loader": "^0.28.11",
     "rimraf": "^2.6.2",
     "source-map-loader": "^0.2.3",
