@@ -19,23 +19,25 @@ monaco.languages.register({
 });
 
 // create Monaco editor
-const value = `{
-    "$schema": "http://json.schemastore.org/coffeelint",
-    "line_endings": "unix"
+const code = `using System;
+
+class Solution {
+    static void Main(String[] args) {
+
+    }
 }`;
 const editor = monaco.editor.create(document.getElementById("container")!, {
-    model: monaco.editor.createModel(value, 'json', monaco.Uri.parse('inmemory://model.json')),
+    model: monaco.editor.createModel(code, 'csharp', monaco.Uri.parse('file:///workspace/Solution.cs')),
     glyphMargin: true,
-    lightbulb: {
-        enabled: true
-    }
+    theme: 'vs-dark',
+    fontSize: 16
 });
 
 // install Monaco language client services
-MonacoServices.install(editor);
+MonacoServices.install(editor, {rootUri: `file://workspace`});
 
 // create the web socket
-const url = createUrl('/sampleServer')
+const url = createUrl('/socket')
 const webSocket = createWebSocket(url);
 // listen when the web socket is opened
 listen({
