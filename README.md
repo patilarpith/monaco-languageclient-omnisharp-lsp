@@ -7,3 +7,6 @@ docker run --rm -p 3000:3000 monaco-languageclient-omnisharp-lsp
 ```
 
 The monaco editor will be accessable at `http://localhost:3000` and the lsp messages will be visible in the websocket connection named `socket`
+
+## Screenshot
+![Screenshot](Screenshot.png)
