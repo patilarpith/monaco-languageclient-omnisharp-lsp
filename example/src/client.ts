@@ -34,7 +34,7 @@ const editor = monaco.editor.create(document.getElementById("container")!, {
 });
 
 // install Monaco language client services
-MonacoServices.install(editor, {rootUri: `file://workspace`});
+MonacoServices.install(editor, {rootUri: "file:///workspace"});
 
 // create the web socket
 const url = createUrl('/socket')
