@@ -14,6 +14,7 @@
     ],
     "outDir": "lib",
     "strict": true,
+    "strictNullChecks": false,
     "noImplicitReturns": true,
     "noUnusedLocals": true
   },
