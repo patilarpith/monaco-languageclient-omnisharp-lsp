@@ -1,8 +1,4 @@
 {
-  "MsBuild": {
-    "MsBuildSDKsPath": "/opt/dotnet/sdk/2.2.300/Sdks",
-    "UseLegacySdkResolver": true
-  },
   "dotnet": {
     "enabled": true,
     "enablePackageRestore": true

@@ -30,7 +30,6 @@ RUN dotnet help
 # Copy artifacts
 RUN mkdir /workspace
 COPY csharp-workspace/Solution.csproj /workspace/
-COPY csharp-workspace/omnisharp.json $HOME/.omnisharp/
 
 # monaco-languageclient
 WORKDIR /app
